@@ -38,6 +38,14 @@ class Customer
     return seeing.map{|viewing| Film.new(viewing)}
   end
 
+  def tickets_purchased()
+    sql = "SELECT * FROM films INNER JOIN tickets ON films.id = tickets.film_id
+    WHERE customer_id = $1;"
+    values = [@id]
+    bought = SqlRunner.run(sql, values)
+    return bought.map{|tix| Ticket.new(tix)}.length
+  end
+
   def ticket_price()
     sql = "SELECT price FROM films WHERE id = $1;"
     values = [@id]
