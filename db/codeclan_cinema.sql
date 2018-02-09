@@ -21,10 +21,6 @@ CREATE TABLE tickets (
   customer_id INT REFERENCES customers(id) ON DELETE CASCADE
 );
 
-
--- Show which films a customer has booked to see, and see which customers
--- are coming to see one film.
---
 -- Basic extensions:
 -- Buying tickets should decrease the funds of the customer by the price
 -- Check how many tickets were bought by a customer
