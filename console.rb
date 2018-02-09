@@ -4,9 +4,13 @@ require_relative('db/sql_runner')
 require_relative('models/customers')
 require_relative('models/films')
 require_relative('models/tickets')
+require_relative('models/screenings')
 
 Customer.delete_all
 Film.delete_all
+Ticket.delete_all
+Screening.delete_all
+
 
 customer1 = Customer.new({
   'name'=>'Christie',
@@ -124,6 +128,55 @@ ticket5.save
 ticket6.save
 ticket7.save
 
+
+screening1 = Screening.new({
+  'movie_id' => film1.id,
+  'show_time' => '20,00'
+  })
+
+screening2 = Screening.new({
+  'movie_id' => film1.id,
+  'show_time' => '22,00'
+  })
+
+screening3 = Screening.new({
+  'movie_id' => film2.id,
+  'show_time' => '18,00'
+  })
+
+screening4 = Screening.new({
+  'movie_id' => film2.id,
+  'show_time' => '20,00'
+  })
+
+screening5 = Screening.new({
+  'movie_id' => film3.id,
+  'show_time' => '20,30'
+  })
+
+screening6 = Screening.new({
+  'movie_id' => film3.id,
+  'show_time' => '21,30'
+  })
+
+screening7 = Screening.new({
+  'movie_id' => film4.id,
+  'show_time' => '21,00'
+  })
+
+screening8 = Screening.new({
+  'movie_id' => film4.id,
+  'show_time' => '23,00'
+  })
+
+screening1.save
+screening2.save
+screening3.save
+screening4.save
+screening5.save
+screening6.save
+screening7.save
+screening8.save
 
 binding.pry
 nil
