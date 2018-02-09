@@ -38,6 +38,18 @@ class Customer
     return seeing.map{|viewing| Film.new(viewing)}
   end
 
+  def ticket_price()
+    sql = "SELECT price FROM films WHERE id = $1;"
+    values = [@id]
+    costs = SqlRunner.run(sql, values)
+    return costs.map{|cost| cost['price'].to_i}
+  end
+
+  def funds_remaining()
+    @funds -= ticket_price.sum
+    update
+  end
+
   def self.delete_all()
     sql = "DELETE FROM customers"
     values = []
