@@ -21,10 +21,6 @@ CREATE TABLE tickets (
   customer_id INT REFERENCES customers(id) ON DELETE CASCADE
 );
 
--- Basic extensions:
--- Check how many tickets were bought by a customer
--- Check how many customers are going to watch a certain film
---
 -- Advanced extensions:
 -- Create a screenings table that lets us know what time films are showing
 -- Write a method that finds out what is the most popular time
