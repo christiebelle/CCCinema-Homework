@@ -56,26 +56,22 @@ customer3.update
 
 film1 = Film.new({
   'title' => 'WonderWoman',
-  'price' => '10',
-  'show_time' => '8.00'
+  'price' => '10'
   })
 
 film2 = Film.new({
   'title' => 'Lego Batman Movie',
-  'price' => '8',
-  'show_time' => '7.00'
+  'price' => '8'
   })
 
 film3 = Film.new({
   'title' => 'Life of Pi',
-  'price' => '10',
-  'show_time' => '9.00'
+  'price' => '10'
   })
 
 film4 = Film.new({
   'title' => 'Silver Linings Playbook',
-  'price' => '10',
-  'show_time' => '8.30'
+  'price' => '10'
   })
 
 film1.save
