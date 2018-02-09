@@ -32,6 +32,9 @@ customer2.save
 customer3.save
 customer4.save
 
+customer3.name = 'John'
+customer3.update
+
 
 
 binding.pry
